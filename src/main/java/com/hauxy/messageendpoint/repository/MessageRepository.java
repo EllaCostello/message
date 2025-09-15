@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
+// Repository-klassen fungerer som et datalager i hukommelsen.
+// Den opretter 3 beskeder ved opstart og returnerer dem via en metode
 public class MessageRepository {
     private final List<Message> messages = new ArrayList<>();
     private int messageId = 1;
@@ -33,9 +35,5 @@ public class MessageRepository {
             }
         }
         return null;
-    }
-
-    public void addMessage(Message message) {
-        messages.add(message);
     }
 }

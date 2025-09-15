@@ -7,6 +7,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
+// Service-laget indeholder forretningslogik og kalder repository-klassen.
+// Repository injiceres via konstruktøren (dependency injection).
 public class MessageService {
     private final MessageRepository repository;
 
@@ -24,9 +26,5 @@ public class MessageService {
             return new Message(message.getId(), message.getContent().toUpperCase());
         }
         return message;
-    }
-
-    public void addMessage(Message message) {
-        repository.addMessage(message);
     }
 }
